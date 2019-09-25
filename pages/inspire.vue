@@ -16,5 +16,9 @@
 
 
 <script>
-export default {}
+export default {
+    created() {
+     this.$axios.get(process.env.VUE_APP_DATABASE_URL + '/users.json').then(res=>{console.log(res.data)})
+    }
+}
 </script> 
