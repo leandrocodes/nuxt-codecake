@@ -6,22 +6,25 @@
       <div class="flex-grow-1"></div>
 
       <v-toolbar-items>
-        <v-btn text>Link 1</v-btn>
-        <v-btn text>Link 2</v-btn>
-        <v-btn text>Link 3</v-btn>
+        <v-btn text>
+          <v-icon>mdi-home-outline</v-icon>Início
+        </v-btn>
+        <v-btn text>
+          <v-icon>mdi-account-card-details-outline</v-icon>Sobre
+        </v-btn>
+        <v-btn text>
+          <v-icon>mdi-storefront</v-icon>Vitrine
+        </v-btn>
+        <v-btn text>
+          <v-icon>mdi-contact-mail-outline</v-icon>Contato
+        </v-btn>
+        <v-btn text>
+          <v-icon>mdi-code-tags</v-icon>Codifique o seu
+        </v-btn>
+        <v-btn text>
+          <v-icon>mdi-door-closed</v-icon>Login
+        </v-btn>
       </v-toolbar-items>
-
-      <template v-if="$vuetify.breakpoint.smAndUp">
-        <v-btn icon>
-          <v-icon>mdi-export-variant</v-icon>
-        </v-btn>
-        <v-btn icon>
-          <v-icon>mdi-delete-circle</v-icon>
-        </v-btn>
-        <v-btn icon>
-          <v-icon>mdi-plus-circle</v-icon>
-        </v-btn>
-      </template>
     </v-toolbar>
   </div>
 </template>
@@ -31,4 +34,11 @@ export default {}
 </script>
 
 <style>
-</style>>
+.v-button span {
+  text-transform: capitalize !important;
+}
+
+.v-icon {
+  margin-right: 5px;
+}
+</style>

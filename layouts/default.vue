@@ -1,5 +1,6 @@
 <template>
   <v-app dark>
+    <AppBar></AppBar>
     <v-content>
       <v-container>
         <nuxt />
@@ -9,5 +10,10 @@
 </template>
 
 <script>
-export default {}
+import AppBar from '../components/AppBar'
+export default {
+  components: {
+    AppBar
+  }
+}
 </script>
