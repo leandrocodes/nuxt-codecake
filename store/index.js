@@ -1,9 +1,14 @@
 export const state = () => ({
-  counter: 0
+  user: {
+    logged: false
+  },
+  admin: {
+    logged: false
+  }
 })
 
 export const mutations = {
   increment (state) {
-    state.counter++
+    state.user.logged = true
   }
 }

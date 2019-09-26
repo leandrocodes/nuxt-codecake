@@ -41,7 +41,7 @@ export default {
   },
   methods: {
     login() {
-      this.$store.commit('increment')
+      this.$store.commit('loggin')
       console.log(this.$store.state)
     }
   }
