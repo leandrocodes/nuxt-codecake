@@ -21,10 +21,11 @@
 </template>
 
 <script>
+import firebase from 'firebase'
 export default {
   data() {
     return {
-      user: { password: '', email: '', logged: false},
+      user: { password: '', email: '', logged: false },
       valid: false,
       passRules: [
         v => !!v || 'Digitar a senha é obrigatório',
@@ -38,11 +39,28 @@ export default {
   },
   created() {
     console.log(this.$store.state)
+    firebase.auth().onAuthStateChanged(user => {
+      //if (user) this.$router.push('/cliente/formulario')
+      //console.log(user)
+    })
+    firebase
+      .auth()
+      .signOut()
+      .then(() => {
+        this.$router.go()
+      })
   },
   methods: {
     login() {
-      this.$store.commit('loggin')
-      console.log(this.$store.state)
+      //console.log(db)
+      firebase
+        .auth()
+        .signInWithEmailAndPassword(this.user.email, this.user.password)
+        .then(() => {
+          console.log('logou')
+          this.$store.commit('increment')
+          console.log(this.$store.state)
+        })
     }
   }
 }
